@@ -6,16 +6,18 @@
 
 First [download](http://jxcore.com/downloads/) and install JXcore. Then add `ghost` and `express` dependencies in `package.json` file. After that, let's create main file named `index.js` in root of the project:
 
-    var express = require('express'),
-        app = express(),
-        ghost = require('ghost');
+```javascript
+var express = require('express'),
+    app = express(),
+    ghost = require('ghost');
 
-    ghost().then(function (ghostServer) {
-        app.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
-        ghostServer.start(app);
-    }).catch(function (err) {
-        console.log(err);
-    });
+ghost().then(function (ghostServer) {
+    app.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
+    ghostServer.start(app);
+}).catch(function (err) {
+    console.log(err);
+});
+```
 
 Here we are creating ghost server and assigning express app to it. That's all code needed to run blog. Now install npm depencencies:
 
