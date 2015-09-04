@@ -27,4 +27,12 @@ And run the server:
 
     jx index.js
     
-The server will be run on `localhost:2368` by default.
+The server will be run on `localhost:2368` by default. You can access admin panel from `/ghost` path. Now let's package it with JXcore (run shell in the root of the project):
+
+    jx package index.js "myPackage"
+    
+This starts packaging. First parameter (`index.js`) is main file of the project and second parameter (`"myPackage"`) is package name. After command execution is complete, two new files are created: `myPackage.jx` and `myPackage.jxp`. First one is packaged app, everything project needs is inside it, so you can copy it and run anywhere with command:
+
+    jx myPackage.jx
+
+You can also create native package by adding `-native` flag to `jx package` command. For more about packaging see JXcore [documentation](http://jxcore.com/packaging-code-protection/).
