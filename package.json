@@ -1,0 +1,13 @@
+{
+    "name": "jxcore-tutorial-packaged-ghost",
+    "description": "Ghost blog packaged with JXcore",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/karaxuna/jxcore-tutorial-ghost-packaged.git"
+    },
+    "dependencies": {
+        "express": "4.13.3",
+        "ghost": "0.7.0"
+    }
+}

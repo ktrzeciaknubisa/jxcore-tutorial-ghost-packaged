@@ -1,0 +1,1 @@
+### Creating [ghost](https://github.com/tryghost/Ghost) blog and packaging it with JXcore
