@@ -2,7 +2,7 @@
 
 ![Demo screenshot](https://raw.githubusercontent.com/karaxuna/jxcore-tutorial-ghost-packaged/master/screens/admin-create-post.png "Demo screenshot")
 
-***See [repository](https://github.com/karaxuna/jxcore-tutorial-jxcore-tutorial-ghost-packaged) for completed demo.***
+***See [repository](https://github.com/karaxuna/jxcore-tutorial-ghost-packaged) for completed demo.***
 
 First [download](http://jxcore.com/downloads/) and install JXcore. Then add `ghost` and `express` dependencies in `package.json` file. After that, let's create main file named `index.js` in root of the project:
 
