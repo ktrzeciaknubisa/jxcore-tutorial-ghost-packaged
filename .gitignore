@@ -2,11 +2,15 @@ node_modules/
 npm-debug.log
 
 content/*
-!content/*/README.md
+!content/apps/README.md
+!content/data/README.md
+!content/images/README.md
 !content/themes/
 
 build/content/*
-!build/content/*/README.md
+!build/content/apps/README.md
+!build/content/data/README.md
+!build/content/images/README.md
 !build/content/themes/
 
 build/ghost.jx
