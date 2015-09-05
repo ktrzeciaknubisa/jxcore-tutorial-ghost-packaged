@@ -29,7 +29,7 @@ And run the server:
     
 The server will be run on `localhost:2368` by default. You can access admin panel from `/ghost` path. Now let's package it with JXcore (run shell in the root of the project):
 
-    jx package index.js "build/ghost" --slim "config.js,content,build"
+    jx package index.js "build/ghost" --slim "/config.js,/content,/build"
     
 This starts packaging. First parameter (`index.js`) is main file of the project and second parameter (`"build/ghost"`) is package path. After command execution is complete, two new files are created in `build` folder: `ghost.jx` and `ghost.jxp`. First one is packaged app, everything project needs is inside it, so you can copy it and run anywhere with command:
 
