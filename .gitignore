@@ -1,2 +1,13 @@
 node_modules/
 npm-debug.log
+
+content/
+!content/*/README.md
+!content/themes/
+
+build/content/
+!build/content/*/README.md
+!build/content/themes/
+
+build/ghost.jx
+build/ghost.jxp
