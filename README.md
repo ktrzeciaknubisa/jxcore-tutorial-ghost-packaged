@@ -11,7 +11,9 @@ var express = require('express'),
     app = express(),
     ghost = require('ghost');
 
-ghost().then(function (ghostServer) {
+ghost({
+    config: path.resolve(__dirname, 'config.js')
+}).then(function (ghostServer) {
     app.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
     ghostServer.start(app);
 }).catch(function (err) {
@@ -19,7 +21,7 @@ ghost().then(function (ghostServer) {
 });
 ```
 
-Here we are creating ghost server and assigning express app to it. That's all code needed to run blog. Now install npm depencencies:
+Here we are creating ghost server and assigning express app to it. We set custom config file path (see [config](https://raw.githubusercontent.com/karaxuna/jxcore-tutorial-ghost-packaged/master/config.js) file). That's all code needed to run blog. Now install npm depencencies:
 
     jx install
     
@@ -31,7 +33,7 @@ The server will be run on `localhost:2368` by default. You can access admin pane
 
     jx package index.js "build/ghost" --slim "/config.js,/content,/build"
     
-This starts packaging. First parameter (`index.js`) is main file of the project and second parameter (`"build/ghost"`) is package path. After command execution is complete, two new files are created in `build` folder: `ghost.jx` and `ghost.jxp`. First one is packaged app, everything project needs is inside it, so you can copy it and run anywhere with command:
+This starts packaging. First parameter (`index.js`) is main file of the project, second parameter (`"build/ghost"`) is package path and the third parameter is for excluding folders/files from project. After command execution is complete, two new files are created in `build` folder: `ghost.jx` and `ghost.jxp`. First one is packaged app, everything project needs is inside it, so you can copy it and run anywhere with command:
 
     jx ghost.jx
 
