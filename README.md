@@ -4,7 +4,9 @@
 
 ***See [repository](https://github.com/karaxuna/jxcore-tutorial-ghost-packaged) for completed demo.***
 
-First [download](http://jxcore.com/downloads/) and install JXcore. Then add `ghost` and `express` dependencies in `package.json` file. After that, let's create main file named `index.js` in root of the project:
+In this tutorial I'm going to show how easy is to package nodejs app in one file and deploy it with single command using JXcore. <br/>
+
+Let's take [ghost blog](https://github.com/tryghost/Ghost) as example app. First [download](http://jxcore.com/downloads/) and install JXcore. Then add `ghost` and `express` dependencies in `package.json` file. After that, let's create main file named `index.js` in root of the project:
 
 ```javascript
 var express = require('express'),
@@ -32,7 +34,7 @@ And run the server:
 
     jx index.js
     
-The server will be run on `localhost:2368` by default. You can access admin panel from `/ghost` path. Now let's put everything in one file. Instead of regular compressing let's package it with JXcore, since pre-post extracting steps are managable. Run shell in the root of the project, then:
+Blog is ready. The server will be run on `localhost:2368` by default. You can access admin panel from `/ghost` path. Now let's put everything in one file. Instead of regular compressing let's package it with JXcore, since pre-post extracting steps are managable. Run shell in the root of the project, then:
 
     jx package index.js "ghost" -extract
     
@@ -40,4 +42,4 @@ This starts packaging. First parameter (`index.js`) is main file of the project,
 
     jx ghost.jx
 
-This will extract all files and folders of original project and run main file (`ghost/index.js`).
+This will extract all files and folders of original project and run main file (`ghost/index.js`). As a conclusion, JXcore packaging makes it possible to have single file as a project which can be run anywhere with a single command.
