@@ -1,5 +1,8 @@
 node_modules/
 npm-debug.log
 
-build/ghost.jx
-build/ghost.jxp
+ghost.jx
+ghost.jxp
+
+content/data/ghost-dev.db
+content/data/ghost.db
