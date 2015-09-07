@@ -28,7 +28,7 @@ Here we are creating ghost server and assigning express app to it. We set custom
         contentPath: path.join(__dirname, '/content/')
     }
 
-That's all code needed to run blog. Now install npm depencencies:
+You should have `/apps`, `/data`, `/images` and `/themes` folders inside `/content` folder. Here ghost saves dynamic information, such as images and post data and reads theme for the blog. That's all code needed to run blog. Now install npm depencencies:
 
     jx install
     
@@ -36,12 +36,12 @@ And run the server:
 
     jx index.js
     
-The server will be run on `localhost:2368` by default. You can access admin panel from `/ghost` path. Now let's package it with JXcore (run shell in the root of the project):
+The server will be run on `localhost:2368` by default. You can access admin panel from `/ghost` path. Now let's put everything in one file. Instead of regular compressing let's package it with JXcore, since pre-post extracting steps are managable. Run shell in the root of the project, then:
 
-    jx package index.js "build/ghost" --slim "/config.js,/content,/build"
+    jx package index.js "ghost" -extract
     
-This starts packaging. First parameter (`index.js`) is main file of the project, second parameter (`"build/ghost"`) is package path and the third parameter is for excluding folders/files from project. After command execution is complete, two new files are created in `build` folder: `ghost.jx` and `ghost.jxp`. First one is packaged app, everything project needs is inside it, so you can copy it and run anywhere with command:
+This starts packaging. First parameter (`index.js`) is main file of the project, second parameter (`"ghost"`) is package path. Talk later about `-extract` flag. After command execution is complete, two new files are created: `ghost.jx` and `ghost.jxp`. First one is packaged app, everything project needs is inside it, so you can copy it and run anywhere with command:
 
     jx ghost.jx
 
-You can also create native package by adding `-native` flag to `jx package` command. For more about packaging see JXcore [documentation](http://jxcore.com/packaging-code-protection/).
+This will extract all files and folders of original project and run main file (`ghost/index.js`).
