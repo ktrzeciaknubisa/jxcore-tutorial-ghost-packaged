@@ -9,7 +9,8 @@ First [download](http://jxcore.com/downloads/) and install JXcore. Then add `gho
 ```javascript
 var express = require('express'),
     app = express(),
-    ghost = require('ghost');
+    ghost = require('ghost'),
+    path = require('path');
 
 ghost({
     config: path.resolve(__dirname, 'config.js')
@@ -21,7 +22,13 @@ ghost({
 });
 ```
 
-Here we are creating ghost server and assigning express app to it. We set custom config file path (see [config](https://raw.githubusercontent.com/karaxuna/jxcore-tutorial-ghost-packaged/master/config.js) file). That's all code needed to run blog. Now install npm depencencies:
+Here we are creating ghost server and assigning express app to it. We set custom config file path (see [config](https://raw.githubusercontent.com/karaxuna/jxcore-tutorial-ghost-packaged/master/config.js) file). Ghost needs content folder where it stores post data and images. By default `/content` folder path is relative to `config.js` file:
+
+    paths: {
+        contentPath: path.join(__dirname, '/content/')
+    }
+
+That's all code needed to run blog. Now install npm depencencies:
 
     jx install
     
