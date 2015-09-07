@@ -24,7 +24,7 @@ ghost({
 });
 ```
 
-Here we are creating ghost server and assigning express app to it. We set custom config file path (see [config](https://raw.githubusercontent.com/karaxuna/jxcore-tutorial-ghost-packaged/master/config.js) file). Ghost needs content folder where it stores post data (`/content/data`) and images (`/content/images`) and reads theme from `/content/themes` folder. By default `/content` folder path is relative to config file.<br/>
+Here we are creating ghost server and assigning express app to it. We set custom config file path. You can copy `config.js` file from `/node_modules/ghost/config.js` and put it in the root of project. Ghost needs content folder where it stores post data (`/content/data`) and images (`/content/images`) and reads theme from `/content/themes` folder. By default `/content` folder path is relative to config file (config file is now in root folder, so `/content` folder must be there too).<br/>
 
 That's all code needed to run blog. Now install npm depencencies:
 
